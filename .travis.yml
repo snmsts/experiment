@@ -20,5 +20,6 @@ install:
   - ros install dexador
 
 script:
+  - openssl version
   - curl -v https://api.github.com
   - ros -s dexador -e '(print (dex:get "https://api.github.com"))'
