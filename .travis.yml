@@ -9,10 +9,10 @@ env:
   matrix:
     - LISP=sbcl-bin
 
-addons:
-  apt:
-    packages:
-      - libc6-i386
+#addons:
+#  apt:
+#    packages:
+#      - libc6-i386
 
 install:
   - sudo apt-get -qq update --force-yes > /dev/null
