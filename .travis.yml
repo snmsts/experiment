@@ -22,4 +22,4 @@ install:
 script:
   - openssl version
   - curl -v https://api.github.com
-  - ros -s dexador -e '(print (dex:get "https://api.github.com"))'
+  - ros -s dexador -e '(let ((ctx (cl+ssl:make-context :verify-depth 10 :verify-mode cl+ssl:+ssl-verify-none+ :verify-location :default))) (cl+ssl:with-global-context (ctx) (print (dex:get "https://api.github.com"))))'
